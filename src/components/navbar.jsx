@@ -1,10 +1,12 @@
 import React from 'react';
+import flag from '../img/japan_flag.png'
 import { NavLink, Link } from "react-router-dom";
 
 function Navbar() {
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark" >
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark mt-1" >
       <Link className="navbar-brand" to="/">
+        <img src={flag} style={{height:"25px", width:"50px", marginRight: "3px"}} alt="Flag" />
         Home
       </Link>
       <button
@@ -21,7 +23,7 @@ function Navbar() {
 
       <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div className="navbar-nav">
-          <NavLink className="nav-item nav-link active" to="/history">
+          <NavLink className="nav-item nav-link" to="/history">
             History
           </NavLink>
           <NavLink className="nav-item nav-link" to="/map">
