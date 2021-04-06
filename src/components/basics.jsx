@@ -4,13 +4,14 @@ import imgLoc from "../img/japan_location.png"
 function Basics() {
   return (
     <React.Fragment>
-      <h1 className="display-2 text-center text-white bg-blue">
+      <div className="bg-primary"><h1 className="display-4 text-center text-white bg-blue">
         Basic informations
-      </h1>
+      </h1></div>
+      
       <div className="container container-fluid">
         <h1 >Geography</h1>
         <img className="img-fluid" src={imgLoc} alt="Location of Japan" />
-        <table class="table table-striped table-responsive">
+        <table className="table table-striped table-responsive">
               <tbody><tr>
                 <th>Capital city</th>
                 <td>Tokyo</td>
@@ -33,7 +34,7 @@ function Basics() {
       </div>
       <div className="container container-fluid">
         <h1>Population</h1>
-        <table class="table table-striped table-responsive">
+        <table className="table table-striped table-responsive">
               <tbody><tr>
                 <th>Number</th>
                 <td>125,480,000</td>
@@ -41,7 +42,7 @@ function Basics() {
               <tr>
                 <th>Population density</th>
                 <td>
-                  334/km<sup>2</sup> - 24th on the World
+                  334/km<sup>2</sup> - 24th
                 </td>
               </tr>
               <tr>
@@ -51,22 +52,22 @@ function Basics() {
               <tr>
                 <th>Nnationality composition</th>
                 <td>
-                  <ul class="list-group">
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <ul className="list-group">
+                    <li className="list-group-item d-flex justify-content-between align-items-center">
                       Japanese
-                      <span class="badge badge-primary badge-pill">98,1 %</span>
+                      <span className="badge badge-primary badge-pill">98,1 %</span>
                     </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <li className="list-group-item d-flex justify-content-between align-items-center">
                       Chinese
-                      <span class="badge badge-primary badge-pill">0,5 %</span>
+                      <span className="badge badge-primary badge-pill">0,5 %</span>
                     </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <li className="list-group-item d-flex justify-content-between align-items-center">
                       Korean
-                      <span class="badge badge-primary badge-pill">0,4 %</span>
+                      <span className="badge badge-primary badge-pill">0,4 %</span>
                     </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <li className="list-group-item d-flex justify-content-between align-items-center">
                       others
-                      <span class="badge badge-primary badge-pill">1 %</span>
+                      <span className="badge badge-primary badge-pill">1 %</span>
                     </li>
                   </ul>
                 </td>
@@ -75,21 +76,21 @@ function Basics() {
                 <th>Religions</th>
                 <td>
                   <ul>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <li className="list-group-item d-flex justify-content-between align-items-center">
                       Shintoism
-                      <span class="badge badge-success badge-pill">70,4 %</span>
+                      <span className="badge badge-success badge-pill">70,4 %</span>
                     </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <li className="list-group-item d-flex justify-content-between align-items-center">
                       Buddhism
-                      <span class="badge badge-success badge-pill">21,2 %</span>
+                      <span className="badge badge-success badge-pill">21,2 %</span>
                     </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <li className="list-group-item d-flex justify-content-between align-items-center">
                       Christianity
-                      <span class="badge badge-success badge-pill">1,5 %</span>
+                      <span className="badge badge-success badge-pill">1,5 %</span>
                     </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <li className="list-group-item d-flex justify-content-between align-items-center">
                       others
-                      <span class="badge badge-success badge-pill">6,9 %</span>
+                      <span className="badge badge-success badge-pill">6,9 %</span>
                     </li>
                   </ul>
                 </td>
@@ -98,7 +99,7 @@ function Basics() {
       </div>
       <div className="container container-fluid">
         <h1 >State department</h1>
-        <table class="table table-striped table-responsive">
+        <table className="table table-striped table-responsive">
               <tbody><tr>
                 <th>State system</th>
                 <td>Constitutional monarchy</td>

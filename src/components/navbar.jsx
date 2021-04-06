@@ -1,12 +1,16 @@
-import React from 'react';
-import flag from '../img/japan_flag.png'
+import React from "react";
+import flag from "../img/japan_flag.png";
 import { NavLink, Link } from "react-router-dom";
 
 function Navbar() {
-    return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark mt-1" >
-      <Link className="navbar-brand" to="/">
-        <img src={flag} style={{height:"25px", width:"50px", marginRight: "3px"}} alt="Flag" />
+  return (
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark mt-1">
+      <div className="container">      <Link className="navbar-brand" to="/">
+        <img
+          src={flag}
+          style={{ height: "25px", width: "50px", marginRight: "3px" }}
+          alt="Flag"
+        />
         Home
       </Link>
       <button
@@ -22,24 +26,37 @@ function Navbar() {
       </button>
 
       <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div className="navbar-nav">
-          <NavLink className="nav-item nav-link" to="/history">
-            History
-          </NavLink>
-          <NavLink className="nav-item nav-link" to="/map">
-            Map
-          </NavLink>
-          <NavLink className="nav-item nav-link" to="/politics">
-            Politics
-          </NavLink>
-          <NavLink className="nav-item nav-link" to="/places">
-            Places
-          </NavLink>
-          
-        </div>
-      </div>            
-        </nav>
-    )
+        <ul className="navbar-nav mr-auto">
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/history">
+              History
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            {" "}
+            <NavLink className="nav-link" to="/map">
+              Map
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/politics">
+              Politics
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            {" "}
+            <NavLink className="nav-link" to="/places">
+              Places
+            </NavLink>
+          </li>
+        </ul>
+        <form className="form-inline my-2 my-md-0">
+            <input className="form-control" type="text" placeholder="Search" aria-label="Search" />
+          </form>
+      </div></div>
+
+    </nav>
+  );
 }
 
-export default Navbar
+export default Navbar;
