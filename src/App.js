@@ -8,6 +8,7 @@ import Politics from "./components/politics";
 import Places from "./components/places";
 import Basics from "./components/basics";
 import MainPage from "./components/mainPage";
+import Island from "./components/island";
 import { Route, Redirect, Switch } from "react-router-dom";
 
 function App() {
@@ -25,12 +26,12 @@ function App() {
               <Route path="/map" component={Map} />
               <Route path="/politics" component={Politics} />
               <Route path="/places" component={Places} />
-
+              <Route path="/island/:name" component={Island} />
               <Redirect from="/" to="/mainPage" exact />
               <Redirect to="/not-found" />
             </Switch>
           </div>
-          <div className="col-lg-3 mt-2">
+          <div className="col-lg-3 p-0 justify-center" id="basics" >
             <Basics />
           </div>
         </div>

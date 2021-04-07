@@ -1,11 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
 import flag from "../img/japan_flag.png";
 import { NavLink, Link } from "react-router-dom";
 
 function Navbar() {
+  const [activeIsland, setActiveIsland] = useState("Islands");
+  const [islands] = useState(["Hokkaido","Honshu","Kyushu","Shikoku","Okinawa"]);
+
+  const currentIsland = (name) => {
+   setActiveIsland(name);
+  }
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark mt-1">
-      <div className="container">      <Link className="navbar-brand" to="/">
+    <nav className="navbar navbar-expand-md navbar-dark bg-dark mt-1 mb-2">
+      <div className="container">      <Link className="navbar-brand" onClick={() => currentIsland("Inslands")} to="/">
         <img
           src={flag}
           style={{ height: "25px", width: "50px", marginRight: "3px" }}
@@ -17,7 +24,7 @@ function Navbar() {
         className="navbar-toggler"
         type="button"
         data-toggle="collapse"
-        data-target="#navbarSupportedContent"
+        data-target="#navbarNavAltMarkup"
         aria-controls="navbarSupportedContent"
         aria-expanded="false"
         aria-label="Toggle navigation"
@@ -28,24 +35,33 @@ function Navbar() {
       <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
-            <NavLink className="nav-link" to="/history">
+            <NavLink className="nav-link" onClick={() => currentIsland("Inslands")} to="/history">
               History
             </NavLink>
           </li>
           <li className="nav-item">
-            {" "}
-            <NavLink className="nav-link" to="/map">
+            <NavLink className="nav-link" onClick={() => currentIsland("Inslands")} to="/map">
               Map
             </NavLink>
           </li>
+          <li className="nav-item dropdown">
+        <a className="nav-link dropdown-toggle" href="#!" id="dropdownIslands" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {activeIsland}
+        </a>
+        <div className="dropdown-menu" aria-labelledby="dropdownIslands">
+          {islands.map((e)=> {
+            if(e !== activeIsland){ return (<Link to={"/island/" + e} onClick={() => currentIsland(e)} key={e} className="dropdown-item">{e}</Link>)}
+          })}
+        </div>
+      </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/politics">
+            <NavLink className="nav-link" onClick={() => currentIsland("Inslands")} to="/politics">
               Politics
             </NavLink>
           </li>
           <li className="nav-item">
             {" "}
-            <NavLink className="nav-link" to="/places">
+            <NavLink className="nav-link" onClick={() => currentIsland("Inslands")} to="/places">
               Places
             </NavLink>
           </li>

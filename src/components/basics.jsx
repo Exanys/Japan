@@ -8,9 +8,10 @@ function Basics() {
         Basic informations
       </h1></div>
       
-      <div className="container container-fluid">
+      <div className="container ">
         <h1 >Geography</h1>
-        <img className="img-fluid" src={imgLoc} alt="Location of Japan" />
+        <div className="justify-center"><img className="img-fluid mb-2" src={imgLoc} alt="Location of Japan" /></div>
+        
         <table className="table table-striped table-responsive">
               <tbody><tr>
                 <th>Capital city</th>
@@ -32,7 +33,7 @@ function Basics() {
               </tr>
             </tbody></table>
       </div>
-      <div className="container container-fluid">
+      <div className="container ">
         <h1>Population</h1>
         <table className="table table-striped table-responsive">
               <tbody><tr>
@@ -97,7 +98,7 @@ function Basics() {
               </tr>
             </tbody></table>
       </div>
-      <div className="container container-fluid">
+      <div className="container ">
         <h1 >State department</h1>
         <table className="table table-striped table-responsive">
               <tbody><tr>
