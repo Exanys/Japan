@@ -4,8 +4,8 @@ import imgLoc from "../img/japan_location.png"
 function Basics() {
   return (
     <React.Fragment>
-      <div className="bg-primary"><h1 className="display-4 text-center text-white bg-blue">
-        Basic informations
+      <div className="rounded-top bg-primary"><h1 className="display-4 text-center text-white">
+        Basic info
       </h1></div>
       
       <div className="container ">

@@ -11,7 +11,7 @@ function Navbar() {
   }
 
   return (
-    <nav className="navbar navbar-expand-md navbar-dark bg-dark mt-1 mb-2">
+    <nav className="navbar navbar-expand-md navbar-dark bg-dark mt-1 mb-2" style={{fontSize: "125%"}}>
       <div className="container">      <Link className="navbar-brand" onClick={() => currentIsland("Inslands")} to="/">
         <img
           src={flag}
@@ -66,7 +66,7 @@ function Navbar() {
             </NavLink>
           </li>
         </ul>
-        <form className="form-inline my-2 my-md-0">
+        <form className="form-inline p-0 my-2 my-md-0">
             <input className="form-control" type="text" placeholder="Search" aria-label="Search" />
           </form>
       </div></div>
