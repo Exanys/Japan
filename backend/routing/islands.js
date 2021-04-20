@@ -8,6 +8,13 @@ router.route('/').get((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
+router.route('/pref/:name').get((req, res) => {
+    const name = req.params.name;
+    Island.findOne({ prefectures: {$all : [name]}})
+    .then(island => res.json(island.name))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
 router.route('/:name').get((req, res) => {
     const name = req.params.name;
     Island.findOne({ name})

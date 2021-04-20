@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 
-const Schema = mongoose.Schema();
 
 const islandSchema = mongoose.Schema({
     _id: { type: Number, required: true},

@@ -5,7 +5,7 @@ function mainPage() {
     return (
         <div className="container-fluid justify-center">
         <h1 className="display-1 text-center text-white">Welcome on the page, where you can find many informations about Japan!</h1>
-        <img className="img-fluid m-2 w-100 rounded" src={img} />
+        <img className="img-fluid m-2 w-100 rounded" src={img} alt="japanFlag"/>
         </div>
     )
 }

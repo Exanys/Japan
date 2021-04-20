@@ -32,11 +32,12 @@ function Island({ match }) {
       </h1>
       <Info data={islandInfo} />
       {islandInfo.about.map((info) => {
-        return <Pharagraph head={info.label} text={info.text} />;
+        return <Pharagraph key={info.label} head={info.label} text={info.text} />;
       })}
       <div className="text-center">
         {islandInfo.images.map((image) => (
           <img
+          key={image.alt}
             src={image.source}
             alt={image.alt}
             style={{ width: "275px", height: "275px" }}

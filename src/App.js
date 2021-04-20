@@ -14,13 +14,13 @@ import { Route, Redirect, Switch } from "react-router-dom";
 function App() {
   return (
     <React.Fragment>
-      <div className="container-fluid p-0">
+      <div  className="container-fluid p-0 m-0" > 
       <Head />
       <Slider />
       <Navbar />
       <div className="container-fluid">
         <div className="row ">
-          <div className="col-lg-8 justify-center">
+          <div className="col-lg-8 ">
             <Switch>
               <Route path="/mainPage" component={MainPage} />
               <Route path="/history" component={History} />
@@ -29,10 +29,10 @@ function App() {
               <Route path="/places" component={Places} />
               <Route path="/island/:name" component={Island} />
               <Redirect from="/" to="/mainPage" exact />
-              <Redirect to="/not-found" />
+              <Redirect to="/mainPage" />
             </Switch>
           </div>
-          <div className="rounded col-lg-4 p-0" id="basics" >
+          <div className="rounded col-lg-4 p-0" id="basics"  >
             <Basics />
           </div>
         </div>
