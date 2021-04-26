@@ -37,21 +37,21 @@ function GeoMap({ data }) {
     svg.selectAll("path").data(data.features[0])
     .enter().append("path")
     .attr("d", path)
-    .style("fill", function() { return "#44aaee" })
-    .on("mouseover", function(e){d3.select(this).style("fill", "#5522aa");
+    .style("fill", function() { return "#ffffff" })
+    .on("mouseover", function(e){d3.select(this).style("fill", "#03254c");
 let name =e.path[0].__data__.properties.name;
 configureStates(name)})
     .on("click", e => {
         let name =e.path[0].__data__.properties.name;
         changeUrl(name)})
-    .on("mouseout", function(e){d3.select(this).style("fill", "#44aaee");})
+    .on("mouseout", function(e){d3.select(this).style("fill", "#ffffff");})
 
     }
   },[data, dimensions]);
 
   const changeUrl = (pref) =>{
     axios
-    .get(`http://localhost:5000/api/islands/pref/${pref}`)
+    .get(`https://japan-site.herokuapp.com/api/islands/pref/${pref}`)
     .then((island) => {
         let ori = window.location.origin;
         let url = `${ori}/island/${island.data}`;
@@ -67,7 +67,7 @@ configureStates(name)})
 
   const label = () => {
     return (
-      <div>
+      <div className="text-center bg-white text-danger p-2 rounded" >
         <h1 className="display-2">Island: {island}</h1>
         <h1 className="display-3">Prefecture: {prefecture}</h1>
       </div>
@@ -76,7 +76,7 @@ configureStates(name)})
 
   const islandName = (pref) => {
        axios
-        .get(`http://localhost:5000/api/islands/pref/${pref}`)
+        .get(`https://japan-site.herokuapp.com/api/islands/pref/${pref}`)
         .then((island) => {
             setIsland(island.data);})
         .catch((error) => console.log(error));

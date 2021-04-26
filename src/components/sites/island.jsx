@@ -15,7 +15,7 @@ function Island({ match }) {
   useEffect(() => {
     let island = match.params.name;
     axios
-      .get(`http://localhost:5000/api/islands/${island}`)
+      .get(`https://japan-site.herokuapp.com/api/islands/${island}`)
       .then((response) => {
         console.log(response.data);
         setIslandInfo(response.data);

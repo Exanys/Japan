@@ -6,7 +6,7 @@ function Map() {
     const [data, setData] = useState(null);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/prefectures', {
+        axios.get('https://japan-site.herokuapp.com/api/prefectures', {
         headers : { 
           'Content-Type': 'application/json',
           'Accept': 'application/json'
