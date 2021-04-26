@@ -1,3 +1,6 @@
+# Where you can visit site?
+Just click [here](https://japan-site.netlify.app/mainPage).
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
