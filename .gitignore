@@ -27,3 +27,5 @@ yarn-error.log*
 
 /json_islands
 backend
+# Local Netlify folder
+.netlify
