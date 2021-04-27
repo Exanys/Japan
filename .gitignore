@@ -25,5 +25,5 @@ yarn-error.log*
 /backend/.env
 
 
-/json_islands
+/jsons
 /backend
