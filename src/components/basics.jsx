@@ -3,14 +3,14 @@ import imgLoc from "../img/japan_location.png"
 
 function Basics() {
   return (
-    <React.Fragment>
+    <div className="bg-white rounded pb-1">
       <div className="rounded-top bg-primary"><h1 className="display-4 text-center text-white">
         Basic info
       </h1></div>
       
       <div className="container ">
         <h1 >Geography</h1>
-        <div className="justify-center"><img className="img-fluid mb-2" src={imgLoc} alt="Location of Japan" /></div>
+        <div className="text-center"><img className="img-fluid mb-2" src={imgLoc} alt="Location of Japan" /></div>
         
         <table className="table table-striped table-responsive">
               <tbody><tr>
@@ -126,7 +126,7 @@ function Basics() {
             </tbody></table>
       </div>
 
-    </React.Fragment>
+    </div>
   );
 }
 
