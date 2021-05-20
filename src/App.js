@@ -32,7 +32,7 @@ function App() {
               <Redirect to="/mainPage" />
             </Switch>
           </div>
-          <div className="rounded col-lg-4 p-0" id="basics"  >
+          <div className="rounded col-lg-4  " id="basics"  >
             <Basics />
           </div>
         </div>

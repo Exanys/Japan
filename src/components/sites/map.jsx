@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import GeoMap from './common/geoMap'
+import LoadingMask from "react-loadingmask";
 
 function Map() {
     const [data, setData] = useState(null);
+    const [loaded, setLoaded] = useState(false)
 
     useEffect(() => {
         axios.get('https://japan-site.herokuapp.com/api/prefectures', {
@@ -17,11 +19,15 @@ function Map() {
         //setData(res.data);
         setData(res.data);
         console.log(data);})
-    .catch(error => console.log(error));},[])
-
+    .catch(error => console.log(error));
+        setLoaded(true);
+},[])
     return (
         <div>
-           <GeoMap data={data} />  
+            <LoadingMask loading={!loaded} text={'Loading...'} >
+                <GeoMap data={data} /> 
+            </LoadingMask>
+            
         </div>
     )
 }

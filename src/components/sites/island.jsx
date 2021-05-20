@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import  Pharagraph from './common/pharagraph'
 import  Info from './common/info'
 import axios from "axios";
+import LoadingMask from "react-loadingmask";
 
 function Island({ match }) {
   const location = useLocation();
@@ -11,6 +12,7 @@ function Island({ match }) {
     images: [],
     prefectures: [],
   });
+  const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
     let island = match.params.name;
@@ -23,10 +25,12 @@ function Island({ match }) {
       .catch((error) => {
         console.log(error);
       });
+      setLoaded(true);
   }, [location]);
 
   return (
     <React.Fragment>
+      <LoadingMask loading={!loaded} text={'Loading...'}>
       <h1 className="bg-primary text-white display-4 text-center p-4 rounded">
         {islandInfo.name}
       </h1>
@@ -51,6 +55,7 @@ function Island({ match }) {
           {islandInfo.source}
         </a>
       </p>
+      </LoadingMask>
     </React.Fragment>
   );
 }
