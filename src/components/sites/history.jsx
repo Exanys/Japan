@@ -5,7 +5,7 @@ import axios from 'axios'
 import LoadingMask from "react-loadingmask";
 
 function History() {
-    const [data, setData] = useState([{_id: 0, text: '', label: '', time: ''}]);
+    const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
@@ -25,12 +25,12 @@ function History() {
     return (
         <div className="container-fluid">
             <LoadingMask loading={loading} loadingText={"Loading..."}>
-            <div className={"row"}>
+            {loading ? (<div style={{height: '100px'}}></div>) :(<div className={"row"}>
                 <div className="col-md-3"><NavigationText data={data}/></div>
                 <div className="col-md-9">
                     {data.map(i=> <Pharagraph key={i._id} text={i.text} head={i.label + ' (' + i.time + ')'} mark={i.label} />)}
                     </div>
-            </div>
+            </div>)}
             </LoadingMask>
             
         </div>

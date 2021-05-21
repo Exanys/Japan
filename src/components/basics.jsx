@@ -3,8 +3,8 @@ import imgLoc from "../img/japan_location.png"
 
 function Basics() {
   return (
-    <div className="bg-white rounded pb-1">
-      <div className="rounded-top bg-primary"><h1 className="display-4 text-center text-white">
+    <div className="bg-white  pb-1" style={{borderRadius: '15px'}}>
+      <div className=" bg-primary" style={{borderRadius: '15px 15px 0px 0px'}}><h1 className="display-4 text-center text-white" >
         Basic info
       </h1></div>
       
@@ -121,7 +121,7 @@ function Basics() {
               </tr>
               <tr>
                 <th>GDP</th>
-                <td>$5.476 trillion (4th))</td>
+                <td>$5.476 trillion (4th)</td>
               </tr>
             </tbody></table>
       </div>

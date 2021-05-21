@@ -26,7 +26,7 @@ function Map() {
     return (
         <div>
             <LoadingMask loading={loading} loadingText={"Loading..."} >
-                <GeoMap data={data} /> 
+                {loading ? (<div style={{height: '100px'}}></div>) : (<GeoMap data={data} />) }
             </LoadingMask>
             
         </div>
