@@ -9,6 +9,7 @@ import Places from "./components/sites/places";
 import Basics from "./components/basics";
 import MainPage from "./components/mainPage";
 import Island from "./components/sites/island";
+import Results from "./components/sites/results";
 import { Route, Redirect, Switch } from "react-router-dom";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
               <Route path="/politics" component={Politics} />
               <Route path="/places" component={Places} />
               <Route path="/island/:name" component={Island} />
+              <Route path="/search/:word" component={Results} />
               <Redirect from="/" to="/mainPage" exact />
               <Redirect to="/mainPage" />
             </Switch>

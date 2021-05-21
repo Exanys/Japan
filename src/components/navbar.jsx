@@ -5,14 +5,24 @@ import { NavLink, Link } from "react-router-dom";
 function Navbar() {
   const [activeIsland, setActiveIsland] = useState("Islands");
   const [islands] = useState(["Hokkaido","Honshu","Kyushu","Shikoku","Okinawa"]);
+  const [search, setSearch] = useState();
 
   const currentIsland = (name) => {
    setActiveIsland(name);
   }
+  const  changeUrl = (e) => {
+    e.preventDefault();
+    let ori = window.location.origin;
+    let url = `${ori}/search/${search}`;
+    window.location.replace(url);
+  }
+  const changeState = (e) => {
+    setSearch(e.target.value)
+  }
 
   return (
     <nav className="navbar navbar-expand-md navbar-dark bg-dark mt-1 mb-2" style={{fontSize: "125%"}}>
-      <div className="container">      <Link className="navbar-brand" onClick={() => currentIsland("Inslands")} to="/">
+      <div className="container">      <Link className="navbar-brand" onClick={() => currentIsland("Islands")} to="/">
         <img
           src={flag}
           style={{ height: "25px", width: "50px", marginRight: "3px" }}
@@ -35,12 +45,12 @@ function Navbar() {
       <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
-            <NavLink className="nav-link" onClick={() => currentIsland("Inslands")} to="/history">
+            <NavLink className="nav-link" onClick={() => currentIsland("Islands")} to="/history">
               History
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" onClick={() => currentIsland("Inslands")} to="/map">
+            <NavLink className="nav-link" onClick={() => currentIsland("Islands")} to="/map">
               Map
             </NavLink>
           </li>
@@ -56,19 +66,19 @@ function Navbar() {
         </div>
       </li>
           <li className="nav-item">
-            <NavLink className="nav-link" onClick={() => currentIsland("Inslands")} to="/politics">
+            <NavLink className="nav-link" onClick={() => currentIsland("Islands")} to="/politics">
               Politics
             </NavLink>
           </li>
           <li className="nav-item">
             {" "}
-            <NavLink className="nav-link" onClick={() => currentIsland("Inslands")} to="/places">
+            <NavLink className="nav-link" onClick={() => currentIsland("Islands")} to="/places">
               Places
             </NavLink>
           </li>
         </ul>
-        <form className="form-inline p-0 my-2 my-md-0">
-            <input className="form-control" type="text" placeholder="Search" aria-label="Search" />
+        <form className="form-inline p-0 my-2 my-md-0" onSubmit={changeUrl}>
+            <input className="form-control" type="text" placeholder="Search" aria-label="Search" onChange={changeState} />
           </form>
       </div></div>
 
