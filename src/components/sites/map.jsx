@@ -5,7 +5,8 @@ import LoadingMask from "react-loadingmask";
 
 function Map() {
     const [data, setData] = useState(null);
-    const [loaded, setLoaded] = useState(false)
+    const [loading, setLoading] = useState(true)
+   
 
     useEffect(() => {
         axios.get('https://japan-site.herokuapp.com/api/prefectures', {
@@ -18,13 +19,13 @@ function Map() {
     .then(res =>{
         //setData(res.data);
         setData(res.data);
-        console.log(data);})
+        setLoading(false);})
     .catch(error => console.log(error));
-        setLoaded(true);
+  
 },[])
     return (
         <div>
-            <LoadingMask loading={!loaded} text={'Loading...'} >
+            <LoadingMask loading={loading} loadingText={"Loading..."} >
                 <GeoMap data={data} /> 
             </LoadingMask>
             

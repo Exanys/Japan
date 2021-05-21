@@ -45,12 +45,13 @@ function Navbar() {
             </NavLink>
           </li>
           <li className="nav-item dropdown">
-        <a className="nav-link dropdown-toggle" href="#!" id="dropdownIslands" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a className="nav-link dropdown-toggle" href="#!" id="dropdownIslands" data-toggle="dropdown"  aria-expanded="false">
           {activeIsland}
         </a>
         <div className="dropdown-menu" aria-labelledby="dropdownIslands">
           {islands.map((e)=> {
             if(e !== activeIsland){ return (<Link to={"/island/" + e} onClick={() => currentIsland(e)} key={e} className="dropdown-item">{e}</Link>)}
+            else return null;
           })}
         </div>
       </li>

@@ -11,13 +11,17 @@ function GeoMap({ data }) {
 
   const [prefecture, setPrefecture] = useState(null);
   const [island, setIsland] = useState(null);
+  const [device, setDevice] = useState();
 
   let probDim = null;
 
 
   useEffect(() => {
     if (data) {
-        probDim =wrapperRef.current.getBoundingClientRect();
+      const wid = window.screen.width;
+      setDevice(wid);
+          
+        probDim = wrapperRef.current.getBoundingClientRect();
      const { width, height } =
       dimensions || probDim;
 
@@ -68,8 +72,8 @@ configureStates(name)})
   const label = () => {
     return (
       <div className="text-center bg-white text-danger p-2 rounded" >
-        <h1 className="display-2">Island: {island}</h1>
-        <h1 className="display-3">Prefecture: {prefecture}</h1>
+        <h1 className={"display-" + (device > 768 ? '2' : '4')}>Island: {island}</h1>
+        <h1 className={"display-" + (device > 768 ? '3' : '')}>Prefecture: {prefecture}</h1>
       </div>
     );
   };

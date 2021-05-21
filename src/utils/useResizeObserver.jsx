@@ -16,7 +16,6 @@ const useResizeObserver = ref => {
         setDimensions(entry.contentRect);
       });
     });
-    console.log(observeTarget);
     resizeObserver.observe(observeTarget);
     return () => {
       resizeObserver.unobserve(observeTarget);

@@ -12,25 +12,25 @@ function Island({ match }) {
     images: [],
     prefectures: [],
   });
-  const [loaded, setLoaded] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     let island = match.params.name;
     axios
       .get(`https://japan-site.herokuapp.com/api/islands/${island}`)
       .then((response) => {
-        console.log(response.data);
         setIslandInfo(response.data);
+        setLoading(false);
       })
       .catch((error) => {
         console.log(error);
       });
-      setLoaded(true);
-  }, [location]);
+      
+  }, [location, match]);
 
   return (
     <React.Fragment>
-      <LoadingMask loading={!loaded} text={'Loading...'}>
+      <LoadingMask loading={loading} loadingText={"Loading..."} >
       <h1 className="bg-primary text-white display-4 text-center p-4 rounded">
         {islandInfo.name}
       </h1>
