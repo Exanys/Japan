@@ -11,8 +11,11 @@ function Results() {
     const [history, setHistory] = useState([]);
     const [islands, setIslands] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [device, setDevice] = useState();
 
     useEffect(() => {
+        const wid = window.screen.width;
+        setDevice(wid);
         const fetchData = async () => {
         const [historyData, islandsData] = await Promise.all([
             getHistory(word),
@@ -24,7 +27,7 @@ function Results() {
         setLoading(false);
 
 
-    },[word])
+    },[word, device])
     
     const getHistory = async (bla) => {
         const {data} = await axios.get(`https://japan-site.herokuapp.com/api/history/search/${bla}`);
@@ -39,7 +42,7 @@ function Results() {
     return (
         <div className="container-fluid">
         <LoadingMask loading={loading} loadingText={"Loading..."}>
-        {loading ? (<div style={{height: '100px'}}></div>) :(finded === 'nothing' ? (<div><h1 className="display-3 text-white mb-4">Nothing found!!!</h1></div>) : (
+        {loading ? (<div style={{height: '100px'}}></div>) :(finded === 'nothing' ? (<div ><h1 className={"text-white mb-4 text-center display-" + (device > 768 ? '1' : '4')}>Nothing found!!!</h1></div>) : (
         <div >
         <div>
             <Formating type='island' data={islands} />

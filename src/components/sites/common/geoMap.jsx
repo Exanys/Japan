@@ -8,22 +8,26 @@ function GeoMap({ data }) {
   const wrapperRef = useRef();
   const dimensions = useResizeObserver(wrapperRef);
 
+  const getDevice = () =>{
+    const wid = window.screen.width;
+    let dev;
+    dev = wid < 768 ? true : false;
+    return dev;
+  }
 
   const [prefecture, setPrefecture] = useState(null);
   const [island, setIsland] = useState(null);
-  const [device, setDevice] = useState();
-
-  let probDim = null;
-
-
+  const [device] = useState(getDevice());
+ 
   useEffect(() => {
     if (data) {
-      const wid = window.screen.width;
-      setDevice(wid);
-          
+      let probDim = null; 
         probDim = wrapperRef.current.getBoundingClientRect();
-     const { width, height } =
+     let { width, height } =
       dimensions || probDim;
+      console.log(device)
+      height = device ? 300 : height;
+      console.log(width, height)
 
       const svg = d3
         .select(svgRef.current)
@@ -51,7 +55,13 @@ configureStates(name)})
     .on("mouseout", function(e){d3.select(this).style("fill", "#ffffff");})
 
     }
-  },[data, dimensions]);
+  },[data, dimensions, device]);
+
+  
+  const configureStates = (p) => {
+    setPrefecture(p);
+    islandName(p);
+  };
 
   const changeUrl = (pref) =>{
     axios
@@ -64,16 +74,11 @@ configureStates(name)})
     .catch((error) => console.log(error));
   }
 
-  const configureStates = (p) => {
-    setPrefecture(p);
-    islandName(p);
-  };
-
   const label = () => {
     return (
       <div className="text-center bg-white text-danger p-2 rounded" >
-        <h1 className={"display-" + (device > 768 ? '2' : '4')}>Island: {island}</h1>
-        <h1 className={"display-" + (device > 768 ? '3' : '')}>Prefecture: {prefecture}</h1>
+        <h1 className={"display-" + (device  ? '' : '2')}>Island: {island}</h1>
+        <h2 className={"display-" + (device  ? '' : '3')}>Prefecture: {prefecture}</h2>
       </div>
     );
   };
@@ -90,7 +95,7 @@ configureStates(name)})
     <div ref={wrapperRef}>
       {prefecture && label()}
       {data !== null && (
-        <div id="d3demo"   style={{ marginBottom: "2rem" }}>
+        <div id="d3demo" style={{height: device ? '300px' : ''}}>
           <svg ref={svgRef}></svg>
         </div>
       )}

@@ -11,8 +11,8 @@ function MainPage() {
 
     return (
         <div className="container-fluid justify-center">
-        <h1 className={"text-center text-white " + (device > 768 && 'display-1')}>Welcome on the page, where you can find many informations about Japan!</h1>
-        <img className="img-fluid m-2 w-100 rounded" src={img} alt="japanFlag"/>
+        <h2 className={"text-center text-white " + (device > 768 && 'display-1')}>Welcome on the page, where you can find many informations about Japan!</h2>
+        <img className="img-fluid mt-2 mb-2 w-100 rounded" src={img} alt="japanFlag"/>
         </div>
     )
 }

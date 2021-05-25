@@ -21,11 +21,11 @@ function Navbar() {
   }
 
   return (
-    <nav className="navbar navbar-expand-md navbar-dark bg-dark mt-1 mb-2" style={{fontSize: "125%"}}>
-      <div className="container">      <Link className="navbar-brand" onClick={() => currentIsland("Islands")} to="/">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark mt-1 mb-2" style={{fontSize: "125%"}}>
+      <div className="container">      <Link className="navbar-brand p-0" onClick={() => currentIsland("Islands")} to="/">
         <img
           src={flag}
-          style={{ height: "25px", width: "50px", marginRight: "3px" }}
+          style={{ height: "25px", width: "50px", marginRight: "3px", marginBottom: "4px"}}
           alt="Flag"
         />
         Home
@@ -77,7 +77,7 @@ function Navbar() {
             </NavLink>
           </li>
         </ul>
-        <form className="form-inline p-0 my-2 my-md-0" onSubmit={changeUrl}>
+        <form className="form-inline p-0 pl-lg-2 my-2 my-mlg-0" onSubmit={changeUrl}>
             <input className="form-control" type="text" placeholder="Search" aria-label="Search" onChange={changeState} />
           </form>
       </div></div>
