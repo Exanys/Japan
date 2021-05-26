@@ -3,7 +3,7 @@ import imgLoc from "../img/japan_location.png"
 
 function Basics() {
   return (
-    <div className="bg-white  pb-1" style={{borderRadius: '15px'}}>
+    <div className="bg-white  pb-1 mb-2" style={{borderRadius: '15px'}}>
       <div className=" bg-primary" style={{borderRadius: '15px 15px 0px 0px'}}><h1 className="display-4 text-center text-white" >
         Basic info
       </h1></div>
@@ -25,11 +25,11 @@ function Basics() {
               </tr>
               <tr>
                 <th>The highest point</th>
-                <td>Mount fuji (3776 m a. s.)</td>
+                <td>Mount Fuji (3776 m a. s.)</td>
               </tr>
               <tr>
                 <th>Location</th>
-                <td>35°41′N 139°46′E</td>
+                <td>35°41′ N 139°46′ E</td>
               </tr>
             </tbody></table>
       </div>

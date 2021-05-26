@@ -21,7 +21,7 @@ function Navbar() {
   }
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark mt-1 mb-2" style={{fontSize: "125%"}}>
+    <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-dark mt-1 mb-2" style={{fontSize: "125%"}}>
       <div className="container">      <Link className="navbar-brand p-0" onClick={() => currentIsland("Islands")} to="/">
         <img
           src={flag}

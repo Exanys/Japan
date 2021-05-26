@@ -2,6 +2,7 @@ import React from "react";
 import Head from "./components/head";
 import Slider from "./components/slider";
 import Navbar from "./components/navbar";
+import Footer from "./components/footer";
 import History from "./components/sites/history";
 import Map from "./components/sites/map";
 import Politics from "./components/sites/politics";
@@ -40,6 +41,7 @@ function App() {
         </div>
       </div>
       </div>
+      <Footer />
     </React.Fragment>
   );
 }

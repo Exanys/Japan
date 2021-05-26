@@ -25,9 +25,8 @@ function GeoMap({ data }) {
         probDim = wrapperRef.current.getBoundingClientRect();
      let { width, height } =
       dimensions || probDim;
-      console.log(device)
-      height = device ? 300 : height;
-      console.log(width, height)
+      height = device ? 350 : height;
+    
 
       const svg = d3
         .select(svgRef.current)
