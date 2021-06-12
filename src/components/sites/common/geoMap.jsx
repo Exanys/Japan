@@ -46,10 +46,11 @@ function GeoMap({ data }) {
     .attr("d", path)
     .style("fill", function() { return "#ffffff" })
     .on("mouseover", function(e){d3.select(this).style("fill", "#03254c");
-let name =e.path[0].__data__.properties.name;
+    //console.log(e.target.__data__.properties.name);
+let name =e.target.__data__.properties.name;
 configureStates(name)})
     .on("click", e => {
-        let name =e.path[0].__data__.properties.name;
+        let name =e.target.__data__.properties.name;
         changeUrl(name)})
     .on("mouseout", function(e){d3.select(this).style("fill", "#ffffff");})
 
