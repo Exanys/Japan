@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Head from "./components/head";
 import Slider from "./components/slider";
 import Navbar from "./components/navbar";
@@ -12,9 +12,26 @@ import MainPage from "./components/mainPage";
 import Island from "./components/sites/island";
 import Results from "./components/sites/results";
 import { Route, Redirect, Switch } from "react-router-dom";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+import {faYinYang} from "@fortawesome/free-solid-svg-icons"
+import LoadingMask from "react-loadingmask"
+import BackGround from "./img/background.png"
 
 function App() {
-  return (
+
+  const yinyang = <FontAwesomeIcon icon={faYinYang} className="rc-loading-spin"  />
+  let height = window.innerHeight;
+
+  const [loaded,setLoaded] = useState(false);
+  useEffect(() => {
+    function setLoading (){
+      document.body.style.backgroundImage = `url(${BackGround})`;
+      setLoaded(true);}
+    setTimeout(setLoading, 3000);
+  })
+
+  return(!loaded ? (<LoadingMask  loading={!loaded} className="display-1" style={{fontSize: "1500%"}} indicator={yinyang}><div style={{width: "100%", height: height}}></div></LoadingMask>) :(
+    
     <React.Fragment>
       <div  className="container-fluid p-0 m-0" > 
       <Head />
@@ -43,7 +60,8 @@ function App() {
       </div>
       <Footer />
     </React.Fragment>
-  );
+    
+  )) 
 }
 
 export default App;
