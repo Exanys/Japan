@@ -15,7 +15,7 @@ import { Route, Redirect, Switch } from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {faYinYang} from "@fortawesome/free-solid-svg-icons"
 import LoadingMask from "react-loadingmask"
-import BackGround from "./img/background.png"
+import BackGround from "./img/background.jpg"
 
 function App() {
 
