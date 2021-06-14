@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Pharagraph({head, text, mark}) {
+function Pharagraph({head, text, mark, headClass, pharaClass}) {
     return (
-        <div>
-            <h1 className="bg-secondary text-light rounded p-2" id={mark}>{head}</h1>
-            <p style={{fontSize: "150%"}} >{text}</p>
-          </div>
+        <>
+            <h1 className={headClass} id={mark}>{head}</h1>
+            <p className={pharaClass} style={{fontSize: "150%"}} >{text}</p>
+          </>
     )
 }
 

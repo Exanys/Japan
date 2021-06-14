@@ -28,7 +28,7 @@ function History() {
             {loading ? (<div style={{height: '100px'}}></div>) :(<div className={"row"}>
                 <div className="col-md-3"><NavigationText data={data}/></div>
                 <div className="col-md-9">
-                    {data.map(i=> <Pharagraph key={i._id} text={i.text} head={i.label + ' (' + i.time + ')'} mark={i.label} />)}
+                    {data.map(i=> <Pharagraph pharaClass="" headClass="bg-secondary text-light rounded p-2" key={i._id} text={i.text} head={i.label + ' (' + i.time + ')'} mark={i.label} />)}
                     </div>
             </div>)}
             </LoadingMask>

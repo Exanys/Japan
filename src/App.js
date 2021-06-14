@@ -15,7 +15,7 @@ import { Route, Redirect, Switch } from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {faYinYang} from "@fortawesome/free-solid-svg-icons"
 import LoadingMask from "react-loadingmask"
-import BackGround from "./img/background.jpg"
+
 
 function App() {
 
@@ -25,7 +25,7 @@ function App() {
   const [loaded,setLoaded] = useState(false);
   useEffect(() => {
     function setLoading (){
-      document.body.style.backgroundImage = `url(${BackGround})`;
+      document.body.style.backgroundColor = "#f54248";
       setLoaded(true);}
     setTimeout(setLoading, 3000);
   })

@@ -36,7 +36,7 @@ function Island({ match }) {
       </h1>
       <Info data={islandInfo} />
       {islandInfo.about.map((info) => {
-        return <Pharagraph key={info.label} head={info.label} mark={info.label} text={info.text} />;
+        return <Pharagraph headClass="bg-primary text-light rounded p-2" pharaClass="text-white" key={info.label} head={info.label} mark={info.label} text={info.text} />;
       })}
       <div className="text-center">
         {islandInfo.images.map((image) => (

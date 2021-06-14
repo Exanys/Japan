@@ -10,6 +10,8 @@ function Results() {
     const {word} = useParams();
     const [history, setHistory] = useState([]);
     const [islands, setIslands] = useState([]);
+    const [places, setPlaces] = useState([]);
+    const [politics, setPolitics] = useState([]);
     const [loading, setLoading] = useState(true);
     const [device, setDevice] = useState();
 
@@ -17,12 +19,17 @@ function Results() {
         const wid = window.screen.width;
         setDevice(wid);
         const fetchData = async () => {
-        const [historyData, islandsData] = await Promise.all([
+        const [historyData, islandsData, politicsData, placesData] = await Promise.all([
             getHistory(word),
-            getIslands(word)
+            getIslands(word),
+            getPolitics(word),
+            getPlaces(word)
         ])
         setHistory(historyData);
-        setIslands(islandsData);}
+        setIslands(islandsData);
+        setPolitics(politicsData);
+        setPlaces(placesData);
+    }
         fetchData();
         setLoading(false);
 
@@ -37,7 +44,15 @@ function Results() {
         const {data} = await axios.get(`https://japan-site.herokuapp.com/api/islands/search/${bla}`);
         return data;
     }
-    if(history[0] === undefined && islands[0] === undefined){finded ='nothing' }
+    const getPlaces = async (bla) => {
+        const {data} = await axios.get(`https://japan-site.herokuapp.com/api/places/search/${bla}`);
+        return data;
+    }
+    const getPolitics = async (bla) => {
+        const {data} = await axios.get(`https://japan-site.herokuapp.com/api/politics/search/${bla}`);
+        return data;
+    }
+    if(history[0] === undefined && islands[0] === undefined && places[0] === undefined && politics[0] === undefined){finded ='nothing' }
 
     return (
         <div className="container-fluid">
@@ -49,6 +64,12 @@ function Results() {
         </div>
                 <div>
                 <Formating type='History' data={history} />
+            </div>
+            <div>
+                <Formating type='Politics' data={politics} />
+            </div>
+            <div>
+                <Formating type='Places' data={places} />
             </div>
             </div>
         ))}

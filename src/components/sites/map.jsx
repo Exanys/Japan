@@ -14,7 +14,6 @@ function Map() {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
          }
-  
       })
     .then(res =>{
         //setData(res.data);

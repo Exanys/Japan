@@ -14,6 +14,7 @@ function Formating({data, type}) {
       </ul>
         </>)
     }
+
     return (<>
         <h1 className="bg-primary text-light rounded p-2 text-center">{label}</h1>
         <ul className="list-group list-group-flush rounded mb-2 ">
