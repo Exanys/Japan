@@ -14,6 +14,12 @@ function Formating({data, type}) {
       </ul>
         </>)
     }
+    if(type === 'Politics')return(<>
+        <h1 className="bg-primary text-light rounded p-2 text-center">{label}</h1>
+        <ul className="list-group list-group-flush rounded mb-2 ">
+            {data.map(e=> (<Link style={{fontSize: "125%"}} key={e._id} className="list-group-item text-danger" to={'/'+ type} smooth >{e.type}</Link>))}
+      </ul>
+        </>)
 
     return (<>
         <h1 className="bg-primary text-light rounded p-2 text-center">{label}</h1>

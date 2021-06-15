@@ -11,7 +11,6 @@ function History() {
     useEffect(() => {
         axios.get('https://japan-site.herokuapp.com/api/history')      
         .then((response) => {
-            console.log(response.data);
             setData(response.data);
             setLoading(false);
           })

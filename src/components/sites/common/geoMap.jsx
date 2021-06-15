@@ -7,9 +7,9 @@ function GeoMap({ data }) {
   const svgRef = useRef();
   const wrapperRef = useRef();
   const dimensions = useResizeObserver(wrapperRef);
-
+  let wid = window.screen.width;
   const getDevice = () => {
-    const wid = window.screen.width;
+    
     let dev;
     dev = wid < 768 ? true : false;
     return dev;
@@ -98,7 +98,7 @@ function GeoMap({ data }) {
           d3.select(this).style("fill", "#ffffff");
         });
     }
-  }, [data, dimensions, device]);
+  }, [data, dimensions, device, wid]);
 
 
 
