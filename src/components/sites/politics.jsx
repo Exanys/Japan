@@ -54,7 +54,7 @@ function Politics() {
         !already.includes(true)|| !selectedMain ? setSelectedMain(`${type}`) : setSelectedMain(false)
     }
 
-    loaded ? (<LoadingMask loading={!loaded} loadingText={"Loading..."}><div style={{width: "100%", height: "500px"}}></div></LoadingMask>) :
+    return(!loaded ? (<LoadingMask loading={!loaded} loadingText={"Loading..."}><div style={{width: "100%", height: "500px"}}></div></LoadingMask>) :
 
 
      (
@@ -63,7 +63,7 @@ function Politics() {
             {politics.map(e => <div className="row"><FormatPolitics selectedText={selectedText} selectedMain={e.type !== selectedMain ? false : true} data={e.about} name={e.type} selectionText={selectionText} selectionMain={selectionMain} /></div>)}  
         </div>
         
-    )
+    ))
 }
 
 export default Politics
