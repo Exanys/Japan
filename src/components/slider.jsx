@@ -17,7 +17,7 @@ function Slider() {
     return (
       <Carousel>
         <Carousel.Item>
-        <img className="d-block w-100" style={{height: (device<768 ? "250":"500")+"px"}} src={img1} alt="First slide"/>
+        <img className="d-block w-100" style={{height: (device<768 ? "150":"500")+"px"}} src={img1} alt="First slide"/>
 
         </Carousel.Item>
         <Carousel.Item>

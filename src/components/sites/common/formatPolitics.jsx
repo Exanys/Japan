@@ -17,7 +17,7 @@ function FormatPolitics({data,selectedText, name, selectedMain, selectionMain, s
 
     return (
         <div className="container-fluid text-center">
-            <div className="col-12 p-0"><h1 onClick={() =>selectionMain(name)}className={"text-white text-center rounded pb-3 pt-2 bg-" + (selectedMain ? 'primary' : "secondary")+(device > 768 && ' display-2')}>{name}</h1></div>
+            <div className="col-12 p-0"><h1 onClick={() =>selectionMain(name)}className={"text-white text-center rounded pb-3 pt-2 bg-" + (selectedMain ? 'primary ' : "secondary ")+(device > 768 && ' display-2')}>{name}</h1></div>
             <div className="row">{selectedMain && data.map(e=> <div className={"col-sm-"+ (e.selected ? "7" : "5")} ><h2 onClick={() =>selectionText(e.label)}className="bg-white rounded pb-3 pt-2" >{e.label}</h2>{e.selected && <p style={{fontSize: "125%"}}>{e.text}</p>}</div>)}</div>
         </div>
     )

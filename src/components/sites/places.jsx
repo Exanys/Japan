@@ -56,33 +56,42 @@ function Places() {
         setLoaded(true)
     }
     const selectImg = (name) => {
-  
+        
+        let img = KoyaSanimg
         switch (name) {
             case "Tokyo": 
-                
-                return Tokyo;
+                img = Tokyo;
+                break
             case "Kyoto":
-                return Kyoto;
+                img = Kyoto;
+                break
             case "Kanazawa":
-                return Kanazawa;
+                img = Kanazawa;
+                break
             case "Hakone":
-                return Hakone;
+                img = Hakone;
+                break
             case "Hiroshima":
-                return Hiroshima;
+                img = Hiroshima;
+                break
             case "Nara":
-                return Nara;
+                img = Nara;
+                break
             case "Tsumago":
-                return Tsumago;
+                img = Tsumago;
+                break
             case "Nikko":
-                return Nikko;
+                img = Nikko;
+                break
             case "Takayama":
-                return Takayama;
-            default:
-                return KoyaSanimg
+                img = Takayama;
+                break
                 }
+                
+                return img;
     }
 
-    return (
+    return(
         <LoadingMask loading={!loaded} loadingText={"Loading..."} >
         <div className="container-fluid">
             <PlacesChose data={forChoose} setupArray={setupArray} />
