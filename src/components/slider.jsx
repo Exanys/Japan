@@ -21,15 +21,15 @@ function Slider() {
 
         </Carousel.Item>
         <Carousel.Item>
-        <img className="d-block w-100" src={img2} style={{height: (device<768 ? "250":"500")+"px"}} alt="Second slide"/>
+        <img className="d-block w-100" src={img2} style={{height: (device<768 ? "150":"500")+"px"}} alt="Second slide"/>
 
           </Carousel.Item>
           <Carousel.Item>
-          <img className="d-block w-100" src={img3} style={{height: (device<768 ? "250":"500")+"px"}} alt="Third slide"/>
+          <img className="d-block w-100" src={img3} style={{height: (device<768 ? "150":"500")+"px"}} alt="Third slide"/>
 
           </Carousel.Item>
           <Carousel.Item>
-          <img className="d-block w-100" src={img4} style={{height: (device<768 ? "250":"500")+"px"}} alt="Fourth slide"/>
+          <img className="d-block w-100" src={img4} style={{height: (device<768 ? "150":"500")+"px"}} alt="Fourth slide"/>
 
           </Carousel.Item>
 
