@@ -10,7 +10,7 @@ function FormatPolitics({data,selectedText, name, selectedMain, selectionMain, s
 
     if(name === "Basics" || name === "Emperor") return(
         <div className="col-12">
-        <h1 onClick={() =>selectionMain(name)} className={"text-white text-center rounded pb-3 pt-2 bg-" + (selectedMain ? "primary" : "secondary") + (device > 768 && ' display-2')}>{selectedMain ? data[0].label : name}</h1>
+        <h1 onClick={() =>selectionMain(name)} className={"text-white text-center rounded pb-3 pt-2 bg-" + (selectedMain ? "primary " : "secondary ") + (device > 768 && ' display-2')}>{selectedMain ? data[0].label : name}</h1>
         {selectedMain && <p className="text-center" style={{fontSize: "125%"}}>{data[0].text}</p>}
     </div> 
     )
