@@ -49,7 +49,7 @@ function App() {
               <Route path="/island/:name" component={Island} />
               <Route path="/search/:word" component={Results} />
               <Redirect from="/" to="/mainPage" exact />
-              <Redirect to="/mainPage" />
+              <Redirect to="/search/nothing_Found" />
             </Switch>
           </div>
           <div className="col-lg-4  " id="basics"  >

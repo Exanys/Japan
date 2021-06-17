@@ -22,7 +22,7 @@ function Navbar() {
   }
   return(
     <NavBar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top" className="rounded mt-1 mb-2" style={{fontSize: "125%", opacity: 0.85}} >
-      <NavBar.Brand as={Link} to={"/"} onClick={() => currentIsland("Islands")} className="p-0">
+      <NavBar.Brand as={Link} to={"/"} onClick={() => {currentIsland("Islands"); window.scrollTo(0,0)}} className="p-0">
       <img
           src={flag}
           style={{ height: "25px", width: "50px", marginRight: "3px", marginBottom: "4px"}}
@@ -33,22 +33,22 @@ function Navbar() {
       <NavBar.Toggle aria-controls="responsive-navbar-nav" />
       <NavBar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-        <Nav.Link as={NavLink} eventKey="1" onClick={() => currentIsland("Islands")}to={"/history"}>
+        <Nav.Link as={NavLink} eventKey="1" onClick={() => {currentIsland("Islands"); window.scrollTo(0,0)}}to={"/history"}>
               History
         </Nav.Link>
-        <Nav.Link as={NavLink} eventKey="2" onClick={() => currentIsland("Islands")} to={"/map"}>
+        <Nav.Link as={NavLink} eventKey="2" onClick={() => {currentIsland("Islands"); window.scrollTo(0,0)}} to={"/map"}>
               Map
         </Nav.Link>
         <NavDropdown id="my-nav-dropdown" title={activeIsland} active={activeIsland !== "Islands" ? true : false}>
         {islands.map((e)=> {
-            if(e !== activeIsland){ return (<NavDropdown.Item as={Link} eventKey="3" active={false} to={"/island/" + e} onClick={() => currentIsland(e)} key={e}>{e}</NavDropdown.Item>)}
+            if(e !== activeIsland){ return (<NavDropdown.Item as={Link} eventKey="3" active={false} to={"/island/" + e} onClick={() => {currentIsland(e); window.scrollTo(0,0)}} key={e}>{e}</NavDropdown.Item>)}
             else return null;
           })}
         </NavDropdown>
-        <Nav.Link as={NavLink} eventKey="4" onClick={() => currentIsland("Islands")} to={"/politics"}>
+        <Nav.Link as={NavLink} eventKey="4" onClick={() => {currentIsland("Islands"); window.scrollTo(0,0)}} to={"/politics"}>
               Politics
         </Nav.Link>
-        <Nav.Link as={NavLink} eventKey="5" onClick={() => currentIsland("Islands")} to={"/places"}>
+        <Nav.Link as={NavLink} eventKey="5" onClick={() => {currentIsland("Islands"); window.scrollTo(0,0)}} to={"/places"}>
               Places
         </Nav.Link>
         </Nav>
