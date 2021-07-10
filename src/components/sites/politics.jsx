@@ -54,7 +54,7 @@ function Politics() {
         !already.includes(true)|| !selectedMain ? setSelectedMain(`${type}`) : setSelectedMain(false)
     }
 
-    return(!loaded ? (<LoadingMask loading={!loaded} loadingText={"Loading..."}><div style={{width: "100%", height: "500px"}}></div></LoadingMask>) :
+    return(!loaded ? (<LoadingMask loading={loaded} loadingText={"Loading..."}><div style={{width: "100%", height: "500px"}}></div></LoadingMask>) :
 
 
      (
