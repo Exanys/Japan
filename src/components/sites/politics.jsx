@@ -25,9 +25,11 @@ function Politics() {
               'Accept': 'application/json'
              }
           })
-        .then(res => setPolitics(setAllFalse(res.data)))
+        .then(res => {
+            setPolitics(setAllFalse(res.data))
+            setLoaded(true);})
         .catch(error => console.log(error));
-          setLoaded(true);
+          
     },[])
 
    const setAllTextFalse = ()=> {
@@ -54,7 +56,7 @@ function Politics() {
         !already.includes(true)|| !selectedMain ? setSelectedMain(`${type}`) : setSelectedMain(false)
     }
 
-    return(!loaded ? (<LoadingMask loading={loaded} loadingText={"Loading..."}><div style={{width: "100%", height: "500px"}}></div></LoadingMask>) :
+    return(!loaded ? (<LoadingMask loading={true} loadingText={"Loading..."}><div style={{width: "100%", height: "500px"}}></div></LoadingMask>) :
 
 
      (
